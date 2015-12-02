@@ -91,9 +91,9 @@
                 <ul>
                     <li>pc与wap页面的主要区别</li>
                     <li>布局上的处理</li>
-                    <li>事件上的处理</li>
-                    <li>性能上的处理</li>
-                    <li>webview中的问题</li>
+                    <li>代码上的处理</li>
+                    <li>内嵌客户端的处理</li>
+                    <li>代码调试与性能优化</li>
                     <li>一些踩过的坑以及等待改进的点</li>
                 </ul>
             </section>
@@ -126,9 +126,19 @@
                     <li>测试方式</li>
                 </ul> 
 
-                <p>虽然移动开发听着感觉很厉害，但是实际上从PC转到wap是不需要技术成本的。</p>
             </section>
             
+            <section>
+                <h3>遇到的问题</h3>
+                
+                <ul>
+                    <li>性能: 由于web运行在浏览器(WebView)之下，在某些功能上性能远达不到预期目标。</li>
+                    <li>功能: 由于浏览器的安全限制等因素，导致web先天缺陷，无法实现文件读写、摄像头调用在内的很多功能。</li>
+                    <li>兼容性: 由于浏览器实现差异，并限制web只能使用底层默认控件，导致浏览器之见的体验差异巨大。</li>
+                </ul> 
+
+            </section>
+
             <section>
                 <h3>谈谈代码组织与合作</h3>
 
@@ -136,14 +146,173 @@
                     <li>确定基础框架</li>
                     <li>提取公共模块</li>
                     <li>增加代码的可读性</li>
+                    <li>保持与代码库的同步</li>
                     <li>审查ftl</li>
                     <li>对需求学会say no</li>
                 </ul> 
             </section>
             
+            <!-- 主题二: 布局的差异[[ -->
             <section>
                 <h2>布局上的差别</h2>
             </section>
+            
+            <section>
+                <h3>meta基础知识</h3>
+
+                <ul>
+                    <li>viewport</li>
+                    <li>针对web app的设置</li>
+                    <li>忽略将页面数字识别为电话号码</li>
+                    <li>其他针对特殊浏览器的设置(比如桌面图标)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>字体与单位的选择</h3>
+                
+                <ul>
+                    <li>维持样式一致性的base.css</li>
+                    <li>font-family: Arial,Helvetica,STHeiTi,sans-serif;</li>
+                    <li>CSS单位: px, em or rem</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>布局上的选择</h3>
+
+                <ul>
+                    <li>flex布局</li>
+                    <li>减少fixed元素</li>
+                    <li>使用css3制作图标和动画</li>
+                    <li>base64编码小图标</li>
+                    <li>使用3D加速渲染</li>
+                </ul>
+            </section>
+            <!-- ]]主题二：布局的差异 -->
+
+            <!-- 主题三：代码的差异[[ -->
+            <section>
+                <h2>代码上的差别</h2>
+            </section>
+            
+            <section>
+                <h3>库的选择</h3>
+
+                <ul>
+                    <li>Zepto.js</li>
+                    <li>lazyload.js</li>
+                    <li>iscroll-lite.js</li>
+                    <li>swipe.js</li>
+                    <li>geo.js</li>
+                    <li>alertBox.js</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>事件的处理</h3>
+
+                <ul>
+                    <li>touch事件执行顺序</li>
+                    <li>click事件延时问题</li>
+                    <li>ios下滚动过程中事件不执行</li>
+                    <li>hashchange事件</li>
+                    <li>图片上传的处理</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>其他的功能模块</h3>
+
+                <ul>
+                    <li>UA检测</li>
+                    <li>定位功能</li>
+                    <li>滚动与滑动功能</li>
+                    <li>页面无刷新操作</li>
+                    <li>本地存储功能</li>
+                </ul>
+            </section>
+            <!-- ]]主题三: 代码的差异 -->
+            
+            <!-- 主题四: 内嵌客户端的处理[[ -->
+            <section>
+                <h2>内嵌客户端的处理</h2>
+            </section>
+
+            <section>
+                <h3>针对性的修改</h3>
+                <ul>
+                    <li>添加UA判断，增加对应的js文件</li>
+                    <li>去除HTML的头部</li>
+                    <li>修改客户端头部</li>
+                    <li>调用原生分享控件</li>
+                    <li>调用客户端的上传组件</li>
+                </ul>
+            </section>
+            <!-- ]]主题四: 内嵌客户端的处理 -->
+
+            <!-- 主题五: 代码调试与性能优化[[ -->
+            <section>
+                <h2>代码调试与性能优化</h2>
+            </section>
+            
+            <section>
+                <h3>代码调试</h3>
+
+                <ul>
+                    <li>chrome开发者工具</li>
+                    <li>真机调试</li>
+                    <li>内嵌客户端调试:weinre</li>
+                    <li>线上问题:fiddler抓包</li>
+                </ul>
+
+            </section>
+            <section>
+                <h3>性能优化</h3>
+
+                <ul>
+                    <li>资源的合并</li>
+                    <li>异步加载控制请求顺序</li>
+                    <li>图片，dom懒加载</li>
+                    <li>图片的压缩</li>
+                    <li>高频事件延时处理</li>
+                    <li>长列表页面性能优化</li>
+                </ul>
+            </section>
+            <!-- ]]主题五: 性能上的处理 -->
+
+            
+            <!-- 主题六：踩过的坑与待改进的点[[ -->
+            <section>
+                <h2>踩过的坑与待改进的点</h2>
+            </section>
+
+            <section>
+                <h3>踩过的坑</h3>
+
+                <ul>
+                    <li>swipe出现两张图片的情况</li>
+                    <li>IScroll默认阻止click事件</li>
+                    <li>Alertbox解决点击消失问题</li>
+                    <li>多tab页面高度问题</li>
+                    <li>禁止UC浏览器强制缩放</li>
+                    <li>内嵌页面元素卡顿，闪烁问题</li>
+                    <li>模拟原生应用页面缓存效果</li>
+                    <li>本地存储在隐私模式下的问题</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>待改进的点</h3>
+
+                <ul>
+                    <li>软键盘弹出影响fixed元素布局</li>
+                    <li>点击搜索无法唤出软键盘问题</li>
+                    <li>图片尺寸与格式的自适应</li>
+                    <li>代码采用模块化的组织方式</li>
+                </ul>
+            </section>
+            <!-- ]]主题六: 踩过的坑与待改进的点]] -->
 
             <!-- 结束[[ -->
             <section style="text-align: left;">
