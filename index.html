@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>前端工程化探讨</title>
+    <title>wap开发的经验与总结</title>
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
     <meta name="author" content="Hakim El Hattab">
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -79,7 +79,7 @@
         <div class="slides">
             <!-- 主题 -->
             <section>
-                <h1>wap开发的一些经验与总结</h1>
+                <h1>wap开发的经验与总结</h1>
                 <h2>--以二手优品项目为例</h2>
                 <p>
                     <small><a href="http://finalhome.org/about">惠学洁</a> / <a href="http://weibo.com/leohxj90">@leohxj</a></small>
@@ -89,14 +89,62 @@
             <section>
                 <h2>主要内容</h2>
                 <ul>
-                    <li></li>
+                    <li>pc与wap页面的主要区别</li>
+                    <li>布局上的处理</li>
+                    <li>事件上的处理</li>
+                    <li>性能上的处理</li>
+                    <li>webview中的问题</li>
+                    <li>一些踩过的坑以及等待改进的点</li>
                 </ul>
             </section>
             <!-- End of 引入主题 -->
             
-            
+            <section>
+                <h2>pc与wap页面的主要区别</h2>
+            </section>
 
+            <section>
+                <h3>二手优品</h3>
+                <p>一句话概括: <span>"麻雀虽小，五脏俱全"</span></p>
+                <ul>
+                    <li>pc: <a href="http://2.suning.com" target="_blank">http://2.suning.com</a></li>
+                    <li>wap: <a href="http://m.2.suning.com/wap/index.htm" target="_blank">http://m.2.suning.com/wap/index.htm</a></li>
+                    <li>app: 内嵌在苏宁易购客户端内</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>主要区别</h3>
+                
+                <ul>
+                    <li>设备尺寸</li>
+                    <li>运行环境</li>
+                    <li>网络条件</li>
+                    <li>布局结构</li>
+                    <li>事件处理</li>
+                    <li>新特性与兼容性</li>
+                    <li>测试方式</li>
+                </ul> 
+
+                <p>虽然移动开发听着感觉很厉害，但是实际上从PC转到wap是不需要技术成本的。</p>
+            </section>
             
+            <section>
+                <h3>谈谈代码组织与合作</h3>
+
+                <ul>
+                    <li>确定基础框架</li>
+                    <li>提取公共模块</li>
+                    <li>增加代码的可读性</li>
+                    <li>审查ftl</li>
+                    <li>对需求学会say no</li>
+                </ul> 
+            </section>
+            
+            <section>
+                <h2>布局上的差别</h2>
+            </section>
+
             <!-- 结束[[ -->
             <section style="text-align: left;">
                 <h1>THE END</h1>
